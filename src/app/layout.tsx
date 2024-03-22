@@ -1,5 +1,11 @@
 import { Metadata } from "next"
 import "styles/globals.css"
+import { headers } from "next/headers"
+
+import { cookieToInitialState } from "wagmi"
+
+import { config } from "config"
+import Web3ModalProvider from "context/Web3ModalProvider"
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://localhost:8000"
 
@@ -8,11 +14,12 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout(props: { children: React.ReactNode }) {
+  const initialState = cookieToInitialState(config, headers().get("cookie"))
   return (
-    <html lang="en" data-mode="light">
-      <body>
-        <main className="relative">{props.children}</main>
-      </body>
-    </html>
+    <main className="relative">
+      <Web3ModalProvider initialState={initialState}>
+        {props.children}
+      </Web3ModalProvider>
+    </main>
   )
 }
