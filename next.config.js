@@ -27,6 +27,15 @@ const nextConfig = withStoreConfig({
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/google77e71c55b644a733.html',
+        destination: '//google77e71c55b644a733.html',
+        locale: false,
+      },
+    ];
+  },
   async headers() {
     return [
       {
