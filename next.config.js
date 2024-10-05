@@ -27,6 +27,21 @@ const nextConfig = withStoreConfig({
       },
     ],
   },
+  async headers() {
+    const headers = [];
+    if (process.env.NEXT_PUBLIC_NO_INDEX === 'true') {
+      headers.push({
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex',
+          },
+        ],
+      });
+    }
+    return headers;
+  },
 })
 
 console.log("next.config.js", JSON.stringify(module.exports, null, 2))
