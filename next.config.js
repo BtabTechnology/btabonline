@@ -33,6 +33,10 @@ const nextConfig = withStoreConfig({
         source: '/google77e71c55b644a733.html',
         destination: '/google77e71c55b644a733.html',
       },
+      {
+        source: '/us/google77e71c55b644a733.html',
+        destination: '/us/google77e71c55b644a733.html',
+      },
     ];
   },
   async headers() {
