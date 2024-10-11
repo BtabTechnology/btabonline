@@ -3,6 +3,11 @@ import { Button, Heading } from "@medusajs/ui"
 
 const Hero = () => {
   return (
+
+    <div className="relative">
+    <div className="bg-red-100 text-red-700 px-4 py-3 text-center">
+      <p className="font-bold">This is an experimental page for developers</p>
+    </div>
     <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-center py-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl font-extrabold text-white mb-6 leading-tight">
@@ -21,6 +26,7 @@ const Hero = () => {
           Shop Now
         </a>
       </div>
+    </div>
     </div>
   )
 }
